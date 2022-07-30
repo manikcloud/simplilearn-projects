@@ -8,3 +8,14 @@ output "instance_id" {
   value       = aws_instance.amzn-linux.id
   description = "Instance id"
 }
+
+output "instance_pub_ip" {
+  value       = aws_instance.amzn-linux.public_ip
+  description = "Instance Public IP"
+
+}
+
+output "instance_pub_dns" {
+  value       = aws_instance.amzn-linux.public_dns
+  description = "Instance Pub DNS"
+}
