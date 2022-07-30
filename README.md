@@ -21,8 +21,9 @@ simplilearn-projects Assessment
 - VM AWS AMI ami-0cff7528ff583bf9a
 
 # Jenkins Password
-
+```
 sudo cat  /var/lib/jenkins/secrets/initialAdminPassword
+```
 
 # Docker Installation 
  ```
