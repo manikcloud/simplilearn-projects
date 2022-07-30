@@ -1,19 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.27"
-    }
-  }
-
-  required_version = ">= 0.14.9"
-}
-
-provider "aws" {
-  profile = "default"
-  region  = "us-east-1"
-}
-
 # # Creation of VM in AWS 
 #  - Security group 
 
@@ -52,14 +36,12 @@ resource "aws_instance" "amzn-linux" {
   ami                    = "ami-0c02fb55956c7d316"
   instance_type          = "t3.micro"
   key_name               = aws_key_pair.deployer1.key_name
-  count                  = 1
   vpc_security_group_ids = ["${aws_security_group.allow_SSH.id}"]
-  #   tags = {
-  #     "Name" = "Linux-Node"
-  #     "ENV"  = "Dev"
-  #   }
+  tags = {
+    "Name" = "Linux-Node"
+    "ENV"  = "Dev"
+  }
 
-  #   depends_on = [aws_key_pair.deployer1]
+  depends_on = [aws_key_pair.deployer1]
 
 }
-
