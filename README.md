@@ -18,3 +18,4 @@ simplilearn-projects Assessment
  - OUTBOUND RULES
  - key pair
 
+- VM AWS AMI ami-0cff7528ff583bf9a
