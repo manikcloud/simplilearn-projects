@@ -59,4 +59,29 @@ resource "aws_instance" "ubuntu" {
     "Name" = "UBUNTU-Node"
     "ENV"  = "Dev"
   }
+
+
+  # Type of connection to be established
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file("./deployer")
+    host        = self.public_ip
+  }
+
+  # Remotely execute commands to install Java, Python, Jenkins
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt update && upgrade",
+      "sudo apt install -y python3.8",
+      "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -",
+      "sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ >  /etc/apt/sources.list.d/jenkins.list'",
+      "sudo apt-get update",
+      "sudo apt-get install -y openjdk-8-jre",
+      "sudo apt-get install -y jenkins",
+    ]
+  }
+
+  depends_on = [aws_key_pair.deployer1]
+
 }

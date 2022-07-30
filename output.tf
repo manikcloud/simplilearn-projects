@@ -19,3 +19,9 @@ output "instance_pub_dns" {
   value       = aws_instance.amzn-linux.public_dns
   description = "Instance Pub DNS"
 }
+
+output "instance_pub_ip_ubuntu" {
+  value       = "Ubuntu IP is: ${aws_instance.ubuntu.public_ip}"
+  description = "Instance Public IP UBUNTU"
+
+}
