@@ -42,6 +42,9 @@ simplilearn-projects Assessment
       "sudo apt-get update",
       "sudo apt-get install -y openjdk-8-jre",
       "sudo apt-get install -y jenkins",
+      "sudo apt-get install -y docker docker.io",
+      "sudo chmod 777 /var/run/docker.sock",
+      "sudo cat  /var/lib/jenkins/secrets/initialAdminPassword",
     ]
   }
 
