@@ -21,7 +21,7 @@ simplilearn-projects Assessment
 
 - VM AWS AMI ami-0cff7528ff583bf9a
 
-# Jenkins installation vis Terraform 
+# Jenkins installation via Terraform 
 ```
 
   # Type of connection to be established
@@ -69,6 +69,18 @@ apt install docker.io
 docker run hello-world
 
  ```
+
+# Github & Jenkis Integration Webhook 
+- Goto repo setting 
+- click on Webhook 
+- add your payload URL 
+```
+http://3.89.81.9:8080/github-webhook/
+```
+
+- Update the webhook. 
+
+
 # Create a Jinkins Job 
 
 - Source Code Management
