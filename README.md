@@ -57,3 +57,16 @@ docker tag demo varunmanik/httpd:cicd
 docker run -d -p 80:80 varunmanik/httpd:cicd
 docker ps 
 ```
+
+
+# Common Error 
+```
+/var/run/docker.sock: connect: permission denied
+```
+
+# Resolution
+
+```
+sudo chmod 777 /var/run/docker.sock
+
+```
