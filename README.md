@@ -112,6 +112,12 @@ docker tag demo varunmanik/httpd:cicd
 docker run -d -p 80:80 varunmanik/httpd:cicd
 docker ps 
 ```
+# Output
+- Hit the URL on port 80 you will see the website 
+
+```
+http://35.172.250.157/
+```
 
 
 # Common Error 
