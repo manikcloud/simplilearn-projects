@@ -46,3 +46,14 @@ docker build -t demo .
 docker tag demo varunmanik/httpd:cicd
 docker run -d -p 80:80 varunmanik/httpd:cicd
 ```
+
+# Execute shell Command 
+
+```
+docker run hello-world
+docker rm `docker ps -aq` -f
+docker build -t demo .
+docker tag demo varunmanik/httpd:cicd
+docker run -d -p 80:80 varunmanik/httpd:cicd
+docker ps 
+```
