@@ -32,3 +32,17 @@ apt install docker.io
 docker run hello-world
 
  ```
+
+# Commands related to Docker 
+```
+docker build -t demo .
+vim index.html
+docker build -t demo .
+
+chmod 777 /var/run/docker.sock
+
+docker tag demo varunmanik/httpd:cicd
+docker build -t demo .
+docker tag demo varunmanik/httpd:cicd
+docker run -d -p 80:80 varunmanik/httpd:cicd
+```
