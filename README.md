@@ -10,3 +10,11 @@ simplilearn-projects Assessment
 - Step 3: Setup AWS profile (aws s3 ls ) 
 - Step 4: Write the TF Script. 
 - Step 5: Chk on AWS console. VM is provisioned or not?
+
+
+# Creation of VM in AWS 
+ - Security group 
+ - INBOUND
+ - OUTBOUND RULES
+ - key pair
+
