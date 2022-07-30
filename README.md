@@ -19,3 +19,13 @@ simplilearn-projects Assessment
  - key pair
 
 - VM AWS AMI ami-0cff7528ff583bf9a
+
+
+
+# Docker Installation 
+ ```
+apt install docker 
+apt install docker.io
+docker run hello-world
+
+ ```
