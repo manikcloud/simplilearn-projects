@@ -21,6 +21,12 @@ pipeline {
             			
         			}     
     		}	
+            stage('3.1 TF Validate') {          	 
+        			steps {               	 
+            			echo 'sudo terraform validate'
+            			
+        			}     
+    		}            
             stage('4. TF init') {          	 
         			steps {               	 
             			sh 'sudo terraform init -no-color'
@@ -43,4 +49,3 @@ pipeline {
     		}                      
 	}
 }
-
