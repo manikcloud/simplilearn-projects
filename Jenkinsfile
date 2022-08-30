@@ -41,7 +41,13 @@ pipeline {
         			}     
     		}  
 
-            stage('7. TF apply') {          	 
+            stage('7. TF show') {          	 
+        			steps {               	 
+            			sh 'sudo terraform show -no-color -json -out=teraform.tfplan'
+            			
+        			}     
+    		} 
+            stage('8. TF apply') {          	 
         			steps {               	 
             			sh 'sudo terraform apply --auto-approve -no-color'
             			
