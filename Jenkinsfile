@@ -3,39 +3,39 @@ pipeline {
 		stages {     	 
     		stage('1. Build') {
         			steps {               	 
-            			echo 'Build'          
+            			echo 'Donloading git'          
         			}     	 
     		}     	 
-    		stage('2. git checkout') {          	 
-        			steps {               	 
-                        git branch: 'ec2', url: 'https://github.com/manikcloud/simplilearn-projects.git'  
+    		// stage('2. git checkout') {          	 
+        	// 		steps {               	 
+            //             git branch: 'ec2', url: 'https://github.com/manikcloud/simplilearn-projects.git'  
 
  
-        			}     
+        	// 		}     
     		}
             stage('3. TF FMT') {          	 
         			steps {               	 
-            			echo 'terraform fmt'
+            			echo 'sudo terraform fmt'
             			
         			}     
     		}	
             stage('4. TF init') {          	 
         			steps {               	 
-            			sh 'terraform init'
+            			sh 'sudo terraform init'
             			
         			}     
     		}	
 
             stage('4. TF Plan') {          	 
         			steps {               	 
-            			sh 'terraform plan'
+            			sh 'sudo terraform plan'
             			
         			}     
     		}  
 
             stage('4. TF apply') {          	 
         			steps {               	 
-            			sh 'terraform apply --auto-approve'
+            			sh 'sudo terraform apply --auto-approve'
             			
         			}     
     		}                      
