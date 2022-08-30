@@ -23,7 +23,7 @@ resource "aws_security_group" "Allow_SSH" {
 
 
 
-  name        = "CAllow_SSH-EC2"
+  name        = "iCAllow_SSH-EC2"
   description = "Allow SSH inbound traffic"
 
   #  - INBOUND
