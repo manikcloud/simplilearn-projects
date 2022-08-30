@@ -43,7 +43,7 @@ pipeline {
 
             stage('7. TF show') {          	 
         			steps {               	 
-            			sh 'sudo terraform show -no-color -json -out=teraform.tfplan'
+            			sh 'sudo terraform show -no-color -json teraform.tfplan'
             			
         			}     
     		} 
