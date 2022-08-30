@@ -21,27 +21,27 @@ pipeline {
             			
         			}     
     		}	
-            stage('3.1 TF Validate') {          	 
+            stage('4 TF Validate') {          	 
         			steps {               	 
             			echo 'sudo terraform validate -no-color'
             			
         			}     
     		}            
-            stage('4. TF init') {          	 
+            stage('5. TF init') {          	 
         			steps {               	 
             			sh 'sudo terraform init -no-color'
             			
         			}     
     		}	
 
-            stage('4. TF Plan') {          	 
+            stage('6. TF Plan') {          	 
         			steps {               	 
-            			sh 'sudo terraform plan -no-color -refresh=true -lock=true'
+            			sh 'sudo terraform plan -no-color -refresh=true -lock=true -out=teraform.tfplan'
             			
         			}     
     		}  
 
-            stage('4. TF apply') {          	 
+            stage('7. TF apply') {          	 
         			steps {               	 
             			sh 'sudo terraform apply --auto-approve -no-color'
             			
