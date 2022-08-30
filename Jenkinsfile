@@ -3,7 +3,9 @@ pipeline {
 		stages {     	 
     		stage('1. Build') {
         			steps {               	 
-            			echo 'Donloading git'          
+            			echo 'Installing TF lint'     
+                        sh 'curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash'
+                        sh 'tflint --version '     
         			}     	 
     		}     	 
     		stage('2. tf lint') {          	 
