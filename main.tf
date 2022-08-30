@@ -1,7 +1,7 @@
 # # Creation of VM in AWS 
 #  - Security group 
 
-resource "aws_security_group" "allow_SSH" {
+resource "aws_security_group" "Allow_SSH" {
   name        = "allow_SSH1"
   description = "Allow SSH inbound traffic"
 
