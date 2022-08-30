@@ -15,9 +15,14 @@ provider "aws" {
 }
 
 
+
+
 # - Security group 
 
-resource "aws_security_group" "allow_SSH" {
+resource "aws_security_group" "Allow_SSH" {
+
+
+
   name        = "allow_SSH-EC2"
   description = "Allow SSH inbound traffic"
 
