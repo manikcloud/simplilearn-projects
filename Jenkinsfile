@@ -11,19 +11,19 @@ pipeline {
     		stage('2. tf lint') {          	 
         			steps {               	 
                         sh 'tflint --init'
-                        sh 'tflint'
+                        sh 'tflint --loglevel=info --format=junit'
                          
         			}     
    		}
             stage('3. TF FMT') {          	 
         			steps {               	 
-            			echo 'sudo terraform fmt'
+            			echo 'sudo terraform fmt -check-diff=true'
             			
         			}     
     		}	
             stage('3.1 TF Validate') {          	 
         			steps {               	 
-            			echo 'sudo terraform validate'
+            			echo 'sudo terraform validate -no-color'
             			
         			}     
     		}            
@@ -36,7 +36,7 @@ pipeline {
 
             stage('4. TF Plan') {          	 
         			steps {               	 
-            			sh 'sudo terraform plan -no-color'
+            			sh 'sudo terraform plan -no-color -refresh=tru -lock=tru'
             			
         			}     
     		}  
@@ -49,3 +49,5 @@ pipeline {
     		}                      
 	}
 }
+
+
