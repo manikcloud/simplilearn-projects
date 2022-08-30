@@ -6,13 +6,13 @@ pipeline {
             			echo 'Donloading git'          
         			}     	 
     		}     	 
-    		// stage('2. git checkout') {          	 
-        	// 		steps {               	 
-            //             git branch: 'ec2', url: 'https://github.com/manikcloud/simplilearn-projects.git'  
-
- 
-        	// 		}     
-//    		}
+    		stage('2. tf lint') {          	 
+        			steps {               	 
+                        sh 'tflint --init'
+                        sh 'tflint'
+                         
+        			}     
+   		}
             stage('3. TF FMT') {          	 
         			steps {               	 
             			echo 'sudo terraform fmt'
@@ -41,5 +41,4 @@ pipeline {
     		}                      
 	}
 }
-
 
