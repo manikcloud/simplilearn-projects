@@ -36,7 +36,7 @@ pipeline {
 
             stage('4. TF Plan') {          	 
         			steps {               	 
-            			sh 'sudo terraform plan -no-color -refresh=tru -lock=tru'
+            			sh 'sudo terraform plan -no-color -refresh=true -lock=true'
             			
         			}     
     		}  
