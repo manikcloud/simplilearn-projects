@@ -12,7 +12,7 @@ pipeline {
 
  
         	// 		}     
-    		}
+//    		}
             stage('3. TF FMT') {          	 
         			steps {               	 
             			echo 'sudo terraform fmt'
