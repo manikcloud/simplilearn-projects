@@ -35,7 +35,7 @@ pipeline {
 
             stage('4. TF apply') {          	 
         			steps {               	 
-            			sh 'sudo terraform apply --auto-approve'
+            			sh 'sudo terraform apply --auto-approve -no-color'
             			
         			}     
     		}                      
