@@ -6,6 +6,7 @@ pipeline {
             			echo 'Installing TF lint'     
                         sh 'curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash'
                         sh 'tflint --version '     
+                        sh 'sudo apt install jq -y '
         			}     	 
     		}     	 
     		stage('2. tf lint') {          	 
@@ -44,6 +45,7 @@ pipeline {
             stage('7. TF show') {          	 
         			steps {               	 
             			sh 'sudo terraform show -no-color -json teraform.tfplan'
+                        sh 'jq -r .resource_changes'
             			
         			}     
     		} 
